@@ -1,6 +1,6 @@
 Hashid::Rails.configure do |config|
   # The salt to use for generating hashid. Prepended with table name.
-  config.salt = "Mark is the best"
+  config.salt = "Orion"
 
   # The minimum length of generated hashids
   config.min_hash_length = 6
@@ -11,7 +11,7 @@ Hashid::Rails.configure do |config|
                     "1234567890"
 
   # Whether to override the `find` method
-  config.override_find = false
+  config.override_find = true
 
   # Whether to sign hashids to prevent conflicts with regular IDs (see https://github.com/jcypret/hashid-rails/issues/30)
   config.sign_hashids = true
