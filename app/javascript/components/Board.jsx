@@ -66,6 +66,20 @@ class Board extends Component {
         })
     }
 
+    handleChangeCardName = async (card_id, newCardName) => {
+        let response = await DataClient.changeCardName({
+            card_id: card_id, 
+            title: newCardName,
+        })
+        let data = response.date
+        this.setState({
+            board: {
+                ...this.state.board,
+                cards: [...this.state.board.cards, data]
+            }
+        })
+    }
+
     handleCardDelete = async (key) => {
         let response = await DataClient.deleteCard(key)
         if (response.status === 204) {
@@ -86,7 +100,7 @@ class Board extends Component {
         new_cards.forEach(element => {
             console.log(element)
             if (element.id === card_id) {
-                console.log('GOT IT!')
+                console.log('Card moving was successful!')
                 element.column_id = new_column_id
             }
         });
@@ -118,6 +132,7 @@ class Board extends Component {
                                 handleCardMove={this.handleCardMove}
                                 handleCardSubmit={this.handleCardSubmit}
                                 handleCardDelete={this.handleCardDelete}
+                                handleChangeCardName={this.handleChangeCardName}
                                 handleColumnDelete={this.handleColumnDelete}
                                 allColumns={board.columns.filter(column => column.board_id === board.id)}
                                 />

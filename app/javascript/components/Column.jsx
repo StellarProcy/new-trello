@@ -35,7 +35,7 @@ class Column extends Component {
                         handleMove={this.props.handleCardMove}
                         allColumns={this.props.allColumns}
                         cardDelete={this.props.handleCardDelete}
-                        cardTitleUpdate={this.handleCardSubmit}
+                        handleChangeCardName={this.props.handleChangeCardName}
                         />
                     )
                     }

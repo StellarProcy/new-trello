@@ -12,6 +12,17 @@ class Card extends Component {
         this.props.handleMove(this.props.card_id, parseInt(event.target.value))
     }
 
+    handleChangeCardName = (event) => {
+        let newCardName = prompt('Please, input new card title', 'New title name')
+        console.log(newCardName)
+        if (!newCardName) {
+            alert('Invalid title!')
+        } else if (newCardName = "") {
+            alert('Invalid title!') 
+        } else if (newCardName)
+            this.props.handleChangeCardName(this.props.card_id, newCardName)
+    }
+
     render() { 
         let optionItems = this.props.allColumns.map((column) => 
             <option key={column.id} value={column.id}>{column.name}</option>)
@@ -21,7 +32,11 @@ class Card extends Component {
                 <select onChange = {this.handleMove}>
                     {optionItems}
                 </select>
-                <button className = "delete_button" onClick={this.handleDelete}>
+                <button 
+                    className = "delete_button" onClick={this.handleDelete}>
+                </button>
+                <button
+                    className = "submit_button" onClick={this.handleChangeCardName}> 
                 </button>
             </div>  
         );
