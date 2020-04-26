@@ -41,8 +41,8 @@ class DataClientServise {
     return axios.post(`/api/v1/cards/`, data);
   }
 
-  changeCardName(data) {
-    return axios.patch(`/api/v1/cards/${id}`)
+  changeCardName(id, new_name) {
+    return axios.patch(`/api/v1/cards/${id}`, {title: new_name})
   }
 
   deleteCard(id) {

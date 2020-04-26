@@ -20,6 +20,8 @@ class Column extends Component {
     }
 
     render(){
+        const all_columns_to_move = this.props.allColumns
+            .filter(column => column.id !== this.props.column_id)
         return(
             <div className = "column">    
                 <h2 id = "title-font">{this.props.name}</h2>
@@ -33,7 +35,7 @@ class Column extends Component {
                         column_id={this.props.id}
                         title={card.title}
                         handleMove={this.props.handleCardMove}
-                        allColumns={this.props.allColumns}
+                        allColumns={all_columns_to_move}
                         cardDelete={this.props.handleCardDelete}
                         handleChangeCardName={this.props.handleChangeCardName}
                         />
