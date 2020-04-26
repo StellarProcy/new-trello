@@ -16,4 +16,3 @@ Hashid::Rails.configure do |config|
   # Whether to sign hashids to prevent conflicts with regular IDs (see https://github.com/jcypret/hashid-rails/issues/30)
   config.sign_hashids = true
 end
-
