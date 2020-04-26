@@ -1,0 +1,145 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ body {
+  background-color: #F0F8FF;
+}
+
+h1 {
+  text-align: center;
+}
+
+.dashboards-panel {
+
+}
+
+.create-board-form {
+  margin: 1% 1% 1% 1%;
+}
+
+.boards-grid {
+  display: grid;
+  grid-template-columns: 250px 250px 250px 250px 250px 250px 250px;
+  grid-gap: 10px;
+  margin: 1% 1% 1% 1%;
+}
+
+.board-element {
+  text-align: center;
+  width: 250px;
+  height: 100px;
+  border: 2px outset rgba(28,110,164,0.25);
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+.board {
+
+}
+
+#board-title-font {
+  font-family: "Lucida Console", Monaco, monospace;
+  margin: 1% 1% 1% 1%;
+}
+
+#title-font {
+  font-family: "Lucida Console", Monaco, monospace;
+  margin-left: 10px;
+}
+
+#card-font {
+  font-family: "Lucida Console", Monaco, monospace;
+  margin-left: 10px;
+}
+
+.create-new-column {
+  margin: 1% 1% 1% 1%;
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+  margin: 1% 1% 1% 1%;
+  gap: 1%;
+}
+
+.column {
+  margin: 5px;
+  padding: 5px;
+  border: 1px outset rgba(28,110,164,0.25);
+  border-radius: 4px;
+  flex: 0 1 auto;
+  border-radius: 4px;
+  background-color: #F5F5DC;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  margin: 1% 1% 1% 1%;
+  gap: 10px;
+}
+
+.card {
+  text-align: left;
+  width: 250px;
+  height: 100px;
+  border: 1px outset rgba(28,110,164,0.25);
+  border-radius: 4px;
+  background-color: #FFEBCD;
+}
+
+/* buttons */
+
+.submit_button {
+	background-color:#44c767;
+	border-radius:4px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:"Lucida Console", Monaco, monospace;
+	font-size:14px;
+	padding:6px 10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.add_dashboard_button:hover {
+	background-color:#5cbf2a;
+}
+.add_dashboard_button:active {
+	position:relative;
+	top:1px;
+}
+
+.delete_button {
+	background-color:#FF4500;
+	border-radius:4px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:"Lucida Console", Monaco, monospace;
+	font-size:14px;
+	padding:6px 10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #f80303;
+}
+.add_dashboard_button:hover {
+	background-color:#5cbf2a;
+}
+.add_dashboard_button:active {
+	position:relative;
+	top:1px;
+}
