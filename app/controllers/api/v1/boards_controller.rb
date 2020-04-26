@@ -5,7 +5,7 @@ class Api::V1::BoardsController < ApplicationController
     end 
     
     def show
-        board = Board.find_by_hashid(params[:id])
+        board = Board.find(params[:id])
         render json: BoardSerializer.new(board).as_json
     end
 
