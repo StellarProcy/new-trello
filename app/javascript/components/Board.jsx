@@ -25,9 +25,9 @@ class Board extends Component {
         console.log(board)
     }
 
-    handleColumnSubmit = async (event, newColumnName) => {
+    handleColumnSubmit = async (event, new_column_name) => {
         let response = await DataClient.createColumn({
-            name: newColumnName,
+            name: new_column_name,
             board_id: this.state.board_id
         })
         let data = response.data
@@ -52,9 +52,9 @@ class Board extends Component {
         }   
     }
 
-    handleCardSubmit = async (column_id, newCardName) => {
+    handleCardSubmit = async (column_id, new_card_name) => {
         let response = await DataClient.createCard({
-            title: newCardName,
+            title: new_card_name,
             column_id: column_id,
         })
         let data = response.data
@@ -66,10 +66,30 @@ class Board extends Component {
         })
     }
 
-    handleCardDelete = async (key) => {
-        let response = await DataClient.deleteCard(key)
+    handleChangeCardName = async (card_id, new_card_name) => {
+        console.log(`Changing title for card ${card_id} to ${new_card_name}`)
+        let response = await DataClient.changeCardName(card_id, new_card_name)
         if (response.status === 204) {
-            let new_cards = this.state.board.cards.filter(card => card.id != key)
+            let new_cards = this.state.board.cards;
+            new_cards.forEach(element => {
+                console.log(element)
+                if (element.id === card_id) {
+                    element.title = new_card_name
+                }
+            });
+            this.setState({
+                board: {
+                    ...this.state.board,
+                    cards: new_cards
+                }
+            })
+        }
+    }
+
+    handleCardDelete = async (card_id) => {
+        let response = await DataClient.deleteCard(card_id)
+        if (response.status === 204) {
+            let new_cards = this.state.board.cards.filter(card => card.id != card_id)
             this.setState({
                 board: {
                     ...this.state.board,
@@ -84,9 +104,7 @@ class Board extends Component {
         let new_cards = this.state.board.cards;
         console.log(new_cards)
         new_cards.forEach(element => {
-            console.log(element)
             if (element.id === card_id) {
-                console.log('GOT IT!')
                 element.column_id = new_column_id
             }
         });
@@ -118,6 +136,7 @@ class Board extends Component {
                                 handleCardMove={this.handleCardMove}
                                 handleCardSubmit={this.handleCardSubmit}
                                 handleCardDelete={this.handleCardDelete}
+                                handleChangeCardName={this.handleChangeCardName}
                                 handleColumnDelete={this.handleColumnDelete}
                                 allColumns={board.columns.filter(column => column.board_id === board.id)}
                                 />

@@ -13,15 +13,14 @@ class Api::V1::CardsController < ApplicationController
     render json: cards
   end
 
-  def show 
+  def show
     card = Card.find(params[:id])
     render json: card
   end
 
-  def update 
+  def update
     card = Card.find(params[:id])
     card.update(title: params[:title])
-    render json: card
   end
 
   def destroy
