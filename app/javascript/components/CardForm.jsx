@@ -24,7 +24,9 @@ class CardForm extends Component {
         <form onSubmit={this.handleSubmit}>
             <label>
                 Create new card:
-                <input  type="text"
+                <input  type="text" 
+                        required minLength = "1" 
+                        maxLength = "25"
                         value={this.state.newName}
                         onChange={this.handleChange} />
             </label>
