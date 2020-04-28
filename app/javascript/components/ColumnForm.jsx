@@ -25,6 +25,8 @@ class ColumnForm extends Component {
                 <label>
                     Create new column:
                     <input  type="text"
+                            required minLength = "1" 
+                            maxLength = "25"
                             value={this.state.newName}
                             onChange={this.handleChange} />
                 </label>
