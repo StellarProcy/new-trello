@@ -1,5 +1,4 @@
 class Api::V1::BoardsController < ApplicationController 
-    include Hashid::Rails
     def index
         boards = Board.all
         render json: boards

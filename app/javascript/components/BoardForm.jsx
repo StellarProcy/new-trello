@@ -25,10 +25,10 @@ class BoardForm extends Component{
                     <label>
                         Create new board:
                         <input type="text"
-                                required minLength = "1" 
-                                maxLength = "25"
-                                value={this.state.newName}
-                                onChange={this.handleChange} />
+                               required minLength = "1" 
+                               maxLength = "25"
+                               value={this.state.newName}
+                               onChange={this.handleChange} />
                     </label>
                     <input className = "submit_button" type="submit" value="Create board" />
                 </form>   
