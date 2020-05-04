@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_29_115844) do
+ActiveRecord::Schema.define(version: 2020_05_04_110259) do
 
   # These are extensions that must be enabled in order to support this database
-
+  enable_extension "pgcrypto"
   enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
 
-  create_table "boards", force: :cascade do |t|
+  create_table "boards", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -35,7 +36,7 @@ ActiveRecord::Schema.define(version: 2020_04_29_115844) do
   create_table "columns", force: :cascade do |t|
     t.string "name"
     t.integer "position"
-    t.bigint "board_id", null: false
+    t.uuid "board_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["board_id"], name: "index_columns_on_board_id"
