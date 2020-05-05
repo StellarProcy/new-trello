@@ -20,7 +20,11 @@ class Api::V1::CardsController < ApplicationController
 
   def update
     card = Card.find(params[:id])
-    card.update(title: params[:title])
+    if(params.has_key?(:title))
+      card.update(title: params[:title])
+    elsif(params.has_key?(:column_id))
+      card.update(column_id: params[:column_id])
+    end
   end
 
   def destroy

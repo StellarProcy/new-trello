@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :boards
       resources :columns
       resources :cards
+      mount ActionCable.server => '/cable'
     end
   end
   get '*path', to: 'home#react', constraints: lambda { |req|

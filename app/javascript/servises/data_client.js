@@ -45,6 +45,10 @@ class DataClientServise {
     return axios.patch(`/api/v1/cards/${id}`, {title: new_name})
   }
 
+  cardMove(id, new_column_id) {
+    return axios.patch(`/api/v1/cards/${id}`, {column_id: new_column_id})
+  }
+
   deleteCard(id) {
     return axios.delete(`/api/v1/cards/${id}`)
   }

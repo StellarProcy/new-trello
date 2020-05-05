@@ -101,20 +101,23 @@ class Board extends Component {
 
     handleCardMove = async (card_id, new_column_id) => {
         console.log(`column has changing: ${card_id} moving to ${new_column_id}`);
-        let new_cards = this.state.board.cards;
-        console.log(new_cards)
-        new_cards.forEach(element => {
-            if (element.id === card_id) {
-                element.column_id = new_column_id
-            }
-        });
-        console.log(new_cards)
-        this.setState({
-            board: {
-                ...this.state.board,
-                cards: new_cards
-            }
-        })
+        let response = await DataClient.cardMove(card_id, new_column_id)
+        if (response.status === 204) {
+            let new_cards = this.state.board.cards;
+            console.log(new_cards)
+            new_cards.forEach(element => {
+                if (element.id === card_id) {
+                    element.column_id = new_column_id
+                }
+            });
+            console.log(new_cards)
+            this.setState({
+                board: {
+                    ...this.state.board,
+                    cards: new_cards
+                }
+            })
+        }
     }
 
     render(){

@@ -2,12 +2,18 @@ version: '2'
 services:
   db:
     image: postgres
-  web:
+    environment: 
+      - POSTGRES_HOST_AUTH_METHOD=trust
+  new-trello:
     build: .
-    command: bundle exec rails s -p 3000 -b '0.0.0.0'
-    volumes:
-      - .:/new-trello
     ports:
       - "3000:3000"
+    # volumes:
+    #   - .:/new-trello
+    environment:
+      - PG_HOST=db
+      - PG_PORT=5432
+      - PG_USER=postgres
+      - PG_PASSWORD=
     depends_on:
       - db
