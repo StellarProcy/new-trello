@@ -20,10 +20,10 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
-  port: <%= ENV.fetch('PG_PORT') %>
-  host: <%= ENV.fetch('PG_HOST') %>
-  username: <%= ENV.fetch('PG_USER') %>
-  password: <%= ENV.fetch('PG_PASSWORD') %>
+  port: <%= ENV.fetch('PG_PORT') {} %>
+  host: <%= ENV.fetch('PG_HOST') {} %>
+  username: <%= ENV.fetch('PG_USER') {} %>
+  password: <%= ENV.fetch('PG_PASSWORD') {} %>
 
 development:
   <<: *default
@@ -82,8 +82,9 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-# production:
-  # <<: *default
+production:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   # database: procy_trello_production
   # username: procy_trello
   # password: <%= ENV['PROCY_TRELLO_DATABASE_PASSWORD'] %>
