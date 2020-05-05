@@ -5,3 +5,6 @@ setup:
 build:
   docker:
     web: Dockerfile
+  config:
+    RAILS_ENV: development
+    PG_PORT: 5432
