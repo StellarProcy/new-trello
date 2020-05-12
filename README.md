@@ -26,7 +26,11 @@ Local version is under construction.
 
 Have a nice time management!
 
-<b>Install (Linux)</b>
+<b>Install (Linux)</b> 
+Be sure what your docker and docker-compose are alredy installed! <br/>
+(you can check it by: <br/>
+```docker -v``` and <br/>
+```docker-compose -v``` <br>
 
 1. You can download docker image here: https://hub.docker.com/repository/docker/procy/new-trello
 1.1. Choose the folder for installing by: <br/>
@@ -37,7 +41,9 @@ and choose it: </br>
 ```cd {your directory name}``` <br/>
 1.2. Type the next command: <br/>
 ```docker pull procy/new-trello:latest``` <br/>
-2. When downloading was ended, plese, open <b>another</b> terminal and type next commands: <br/>
+2. When downloading was ended, write command: <br/>
+```docker-compose up``` <br/>
+wait, and then, <b>in another terminal</b> write the next command: <br/>
 ```docker exec new-trello rake db:create && rake db:migrate``` <br/>
 3. Open localhost:3000 in your browser.
 
