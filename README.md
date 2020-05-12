@@ -26,7 +26,7 @@ Local version is under construction.
 
 Have a nice time management!
 
-#Installing
+<b>Install (Linux)</b>
 
 1. You can download docker image here: https://hub.docker.com/repository/docker/procy/new-trello
 1.1. Choose the folder for installing by: <br/>
