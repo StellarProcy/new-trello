@@ -39,7 +39,7 @@ Be sure what your docker and docker-compose are alredy installed! <br/>
 ```docker-compose up``` <br/>
 wait, and then, <b>in another terminal</b> write the next command: <br/>
 ```docker exec new-trello_new-trello_1 rake db:create && docker exec new-trello_new-trello_1 rake db:migrate``` <br/>
-3. Open localhost:3000 in your browser.
+3. Open ```localhost:3000``` in your browser.
 
 Enjoy!
 
