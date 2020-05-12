@@ -29,7 +29,7 @@ Have a nice time management!
 <b>Install (Linux)</b> 
 Be sure what your docker and docker-compose are alredy installed! <br/>
 (you can check it by: <br/>
-```docker -v``` and <br/>
+```docker -v```<br/> and <br/>
 ```docker-compose -v``` <br>
 
 1. You can download docker image here: https://hub.docker.com/repository/docker/procy/new-trello <br/>
