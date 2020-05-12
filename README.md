@@ -1,24 +1,27 @@
-# README
+# New-trello app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is just some app with some trello app functional.
 
-Things you may want to cover:
+You can:
+* create boards
+* sharing board between your friends(or foes)
+* create columns on boards
+* create cards on boards
+* change title of card
+* move card between columns
+* delete columns
+* delete cards
 
-* Ruby version
+If you want to delete card - please, click on the small red rectangle rigth of drop down menu.
 
-* System dependencies
+For change title of card - please, click on the small green rectangle rigth of the small red rectangle.
 
-* Configuration
+Want to move card betwen columns? Just click on drop down menu in card and choose the column.
 
-* Database creation
+For sharing board just copy the URL of board and send it.
 
-* Database initialization
+This is the link of app: https://new-trello-procy.herokuapp.com/
 
-* How to run the test suite
+Local version is under construction.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Have a nice time management!
