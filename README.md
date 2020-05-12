@@ -35,7 +35,7 @@ or create it: <br/>
 ```mkdir {your directory name}``` <br/>
 1.2. Type the next command:
 ```docker pull procy/new-trello:latest``` <br/>
-2. When downloading was ended, plese, open <b>another</b> terminal and type next commands:
+2. When downloading was ended, plese, open <b>another</b> terminal and type next commands: <br/>
 ```docker exec new-trello rake db:create && rake db:migrate``` <br/>
 3. Open localhost:3000 in your browser.
 
