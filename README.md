@@ -34,7 +34,7 @@ Have a nice time management!
 or create it: <br/>
 ```mkdir {your directory name}``` <br/>
 and choose it: </br>
-```cd {your directory name}```
+```cd {your directory name}``` <br/>
 1.2. Type the next command: <br/>
 ```docker pull procy/new-trello:latest``` <br/>
 2. When downloading was ended, plese, open <b>another</b> terminal and type next commands: <br/>
