@@ -32,7 +32,7 @@ Be sure what your docker and docker-compose are alredy installed! <br/>
 ```docker -v``` and <br/>
 ```docker-compose -v``` <br>
 
-1. You can download docker image here: https://hub.docker.com/repository/docker/procy/new-trello
+1. You can download docker image here: https://hub.docker.com/repository/docker/procy/new-trello <br/>
 1.1. Choose the folder for installing by: <br/>
 ```cd {your directory name}``` <br/>
 or create it: <br/>
