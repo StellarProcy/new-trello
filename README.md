@@ -41,4 +41,9 @@ wait, and then, <b>in another terminal</b> write the next command: <br/>
 ```docker exec new-trello_new-trello_1 rake db:create && docker exec new-trello_new-trello_1 rake db:migrate``` <br/>
 3. Open <br/> ```localhost:3000``` <br/> in your browser.
 
+<<<<<<< HEAD
 Enjoy!
+=======
+Enjoy!
+
+>>>>>>> b1066049d47edb0db6b9cd2557d775c8acd6bbd1
