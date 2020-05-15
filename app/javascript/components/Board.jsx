@@ -12,10 +12,22 @@ class Board extends Component {
             board: null,
             board_id: props.match.params.id
         };
-    }
+    };
 
     componentDidMount = () => {
+        this.props.cable.subscriptions.create({
+            channel: 'BoardsChannel',
+            board: this.state.board_id,
+        }, {
+            received: (data) => {
+                this.setState({board: data})
+            },
+        });
         this.fetchData();
+    };
+
+    fetchUpdate = (data) => {
+        console.log(`Update from ws: ${data}`)
     };
 
     fetchData = async () => {
@@ -23,7 +35,7 @@ class Board extends Component {
         let board = await response.data;
         this.setState({board})
         console.log(board)
-    }
+    };
 
     handleColumnSubmit = async (event, new_column_name) => {
         let response = await DataClient.createColumn({
@@ -31,12 +43,13 @@ class Board extends Component {
             board_id: this.state.board_id
         })
         let data = response.data
-        this.setState({
-            board: {
-                ...this.state.board,
-                columns: [...this.state.board.columns, data]
-            }
-        })
+        // unused, because websocket update
+        // this.setState({
+        //     board: {
+        //         ...this.state.board,
+        //         columns: [...this.state.board.columns, data]
+        //     }
+        // })
     }
 
     handleColumnDelete = async (column_id) => {
@@ -58,12 +71,13 @@ class Board extends Component {
             column_id: column_id,
         })
         let data = response.data
-        this.setState({
-            board: {
-                ...this.state.board,
-                cards: [...this.state.board.cards, data]
-            }
-        })
+        // unused, because websocket update
+        // this.setState({
+        //     board: {
+        //         ...this.state.board,
+        //         cards: [...this.state.board.cards, data]
+        //     }
+        // })
     }
 
     handleChangeCardName = async (card_id, new_card_name) => {

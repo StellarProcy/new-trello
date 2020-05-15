@@ -3,6 +3,9 @@ class Api::V1::CardsController < ApplicationController
     card = Card.new(title: params[:title], column_id: params[:column_id])
       if card.save
           render json: card, status: :created
+          column = Column.find(card.column_id)
+          board = Board.find(column.board_id)
+          ActionCable.server.broadcast("board_#{column.board_id}", BoardSerializer.new(board).as_json)
       else
           render json: card.errors, status: :unprocessable_entity
       end
@@ -25,10 +28,16 @@ class Api::V1::CardsController < ApplicationController
     elsif(params.has_key?(:column_id))
       card.update(column_id: params[:column_id])
     end
+    column = Column.find(card.column_id)
+    board = Board.find(column.board_id)
+    ActionCable.server.broadcast("board_#{column.board_id}", BoardSerializer.new(board).as_json)
   end
 
   def destroy
     card = Card.find(params[:id])
     card.destroy
+    column = Column.find(card.column_id)
+    board = Board.find(column.board_id)
+    ActionCable.server.broadcast("board_#{column.board_id}", BoardSerializer.new(board).as_json)
   end
 end

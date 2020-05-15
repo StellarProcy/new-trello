@@ -6,6 +6,8 @@ class Api::V1::ColumnsController < ApplicationController
       else
           render json: column.errors, status: :unprocessable_entity
       end
+      board = Board.find(column.board_id)
+      ActionCable.server.broadcast("board_#{column.board_id}", BoardSerializer.new(board).as_json)
   end
 
   def index
@@ -21,5 +23,7 @@ class Api::V1::ColumnsController < ApplicationController
   def destroy
     column = Column.find(params[:id])
     column.destroy
+    board = Board.find(column.board_id)
+    ActionCable.server.broadcast("board_#{column.board_id}", BoardSerializer.new(board).as_json)
   end
 end
