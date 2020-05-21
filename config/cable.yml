@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  redis://redistogo:4e762805347e85a9ff9f8fca15140bd3@pike.redistogo.com:11057/
-  # channel_prefix: trello_production
+  url: redis://redistogo:4e762805347e85a9ff9f8fca15140bd3@pike.redistogo.com:11057/
+  channel_prefix: trello_production
