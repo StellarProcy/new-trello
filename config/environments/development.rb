@@ -57,6 +57,7 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   # some adds for web-sockets with redis and heroku
+  config.action_cable.url = "ws://localhost:3000/cable"
   config.web_socket_server_url = "wss://new-trello-procy.herokuapp.com/cable"
   config.action_cable.allowed_request_origins = ['https://new-trello-procy.herokuapp.com', 'http://new-trello-procy.herokuapp.com']
 
