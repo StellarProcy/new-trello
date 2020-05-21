@@ -5,7 +5,8 @@ import Board from '../components/Board';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createConsumer } from "@rails/actioncable";
 
-const Cable = createConsumer('ws://localhost:3000/cable')
+// const Cable = createConsumer('ws://localhost:3000/cable')
+const Cable = createConsumer()
 
 const App = () => {    
     return(
