@@ -56,6 +56,10 @@ Rails.application.configure do
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
 
+  # some adds for web-sockets with redis and heroku
+  config.web_socket_server_url = "wss://new-trello-procy.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://new-trello-procy.herokuapp.com', 'http://new-trello-procy.herokuapp.com']
+
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
