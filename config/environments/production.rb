@@ -42,6 +42,10 @@ Rails.application.configure do
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
+  
+  # some adds for web-sockets with redis and heroku
+  config.web_socket_server_url = "wss://new-trello-procy.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://new-trello-procy.herokuapp.com', 'http://new-trello-procy.herokuapp.com']
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
