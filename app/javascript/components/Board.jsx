@@ -44,6 +44,7 @@ class Board extends Component {
         })
         let data = response.data
         // unused, because websocket update
+        
         // this.setState({
         //     board: {
         //         ...this.state.board,
@@ -72,6 +73,7 @@ class Board extends Component {
         })
         let data = response.data
         // unused, because websocket update
+
         // this.setState({
         //     board: {
         //         ...this.state.board,
