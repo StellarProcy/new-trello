@@ -3,6 +3,7 @@ require 'capybara/rails'
 require 'capybara/minitest'
 
 class CreateColumn < ActiveSupport::TestCase
+  include Capybara::DSL
   test "Column empty title" do
     column = Column.new
     assert_not column.save, "Saved the column w/o a title"

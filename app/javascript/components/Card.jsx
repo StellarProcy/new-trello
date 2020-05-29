@@ -33,15 +33,15 @@ class Card extends Component {
         return (
             <div className = "card">
                 <h4 id = "card-font">{this.props.title}</h4>
-                <select onChange={this.handleMove} defaultValue="default">
+                <select onChange={this.handleMove} defaultValue="default" id='choosing_column'>
                     <option key="default" value="default">Move to column:</option>
                     {optionItems}
                 </select>
                 <button 
-                    className = "delete_button" onClick={this.handleDelete}>
+                    className = "delete_button" onClick={this.handleDelete} id = 'delete_card_button'>
                 </button>
                 <button
-                    className = "submit_button" onClick={this.handleChangeCardName}> 
+                    className = "submit_button" onClick={this.handleChangeCardName} id = 'submit_change_name_button'> 
                 </button>
             </div>  
         );

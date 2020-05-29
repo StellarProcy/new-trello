@@ -4,6 +4,10 @@ require 'rails/test_help'
 require 'capybara/rails'
 require 'capybara/minitest'
 
+Capybara.register_driver :selenium_chrome do |app|
+  Capybara::Selenium::Driver.new(app, :browser => :chrome)
+end
+
 class ActiveSupport::TestCase
   # Run tests in parallel with specified workers
   parallelize(workers: :number_of_processors)
@@ -21,8 +25,11 @@ class ActionDispatch::IntegrationTest
   include Capybara::Minitest::Assertions
 
   # Reset sessions and driver between tests
+  setup do
+    Capybara.current_driver = :selenium_chrome
+  end
+  
   teardown do
     Capybara.reset_sessions!
-    Capybara.use_default_driver
   end
 end

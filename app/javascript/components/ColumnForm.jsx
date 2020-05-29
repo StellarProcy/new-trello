@@ -28,9 +28,10 @@ class ColumnForm extends Component {
                             required minLength = "1" 
                             maxLength = "25"
                             value={this.state.newName}
+                            id='new_column'
                             onChange={this.handleChange} />
                 </label>
-                <input className = "submit_button" type="submit" value="Create" />
+                <input className = "submit_button" type="submit" value="Create column" />
             </form> 
           </div>   
       );

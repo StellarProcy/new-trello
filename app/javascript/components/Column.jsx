@@ -42,7 +42,7 @@ class Column extends Component {
                     )
                     }
                 </div>
-                    <button className = "delete_button" onClick={this.handleDelete}>
+                    <button className = "delete_button" onClick={this.handleDelete} id = "Delete column">
                     Delete Column
                     </button>   
             </div>    
