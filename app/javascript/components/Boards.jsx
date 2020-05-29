@@ -37,10 +37,10 @@ class Boards extends Component{
                 <div className = "boards-grid">
                     {this.state.boards.map((board) => 
                         <BoardInfo 
-                            key={board.id}
-                            id={board.id}
-                            name={board.title}
-                            />
+                        key={board.id}
+                        id={board.id}
+                        name={board.title}
+                        />
                     )}
                 </div>
             </div>

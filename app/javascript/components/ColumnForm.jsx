@@ -9,13 +9,13 @@ class ColumnForm extends Component {
   }
 
   handleChange = (event) => {
-      this.setState({ newName: event.target.value })
+    this.setState({ newName: event.target.value })
   }
 
   handleSubmit = (event) => {
-      event.preventDefault();
-      this.props.handleSubmit(event, this.state.newName)
-      this.setState({newName: ''})
+    event.preventDefault();
+    this.props.handleSubmit(event, this.state.newName)
+    this.setState({newName: ''})
   }
 
   render() {
@@ -25,11 +25,11 @@ class ColumnForm extends Component {
                 <label>
                     Create new column:
                     <input  type="text"
-                            required minLength = "1" 
-                            maxLength = "25"
-                            value={this.state.newName}
-                            id='new_column'
-                            onChange={this.handleChange} />
+                        required minLength = "1" 
+                        maxLength = "25"
+                        value={this.state.newName}
+                        id='new_column'
+                        onChange={this.handleChange} />
                 </label>
                 <input className = "submit_button" type="submit" value="Create column" />
             </form> 

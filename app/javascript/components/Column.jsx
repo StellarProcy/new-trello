@@ -16,7 +16,6 @@ class Column extends Component {
 
     handleDelete = (event) => {
         this.props.handleColumnDelete(this.props.column_id)
-        console.log(this.props)
     }
 
     render(){
@@ -42,9 +41,9 @@ class Column extends Component {
                     )
                     }
                 </div>
-                    <button className = "delete_button" onClick={this.handleDelete} id = "Delete column">
-                    Delete Column
-                    </button>   
+                <button className = "delete_button" onClick={this.handleDelete} id = "Delete column">
+                Delete Column
+                </button>   
             </div>    
         )
     }

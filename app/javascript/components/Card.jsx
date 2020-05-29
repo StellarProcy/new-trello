@@ -22,7 +22,6 @@ class Card extends Component {
         } else if (newCardName === "") {
             alert('Invalid title!') 
         } else if (newCardName) {
-            console.log(`Changing title to ${newCardName}`)
             this.props.handleChangeCardName(this.props.card_id, newCardName)
         }
     }

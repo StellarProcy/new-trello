@@ -23,13 +23,13 @@ class BoardForm extends Component{
             <div className = "create-board-form">
                 <form onSubmit={this.handleSubmit}>
                     <label>
-                        Create new board:
+                        <h2>Create new board:</h2>
                         <input type="text"
-                               required minLength = "1" 
-                               maxLength = "25"
-                               value={this.state.newName}
-                               id="new_board"
-                               onChange={this.handleChange} />
+                            required minLength = "1" 
+                            maxLength = "25"
+                            value={this.state.newName}
+                            id="new_board"
+                            onChange={this.handleChange} />
                     </label>
                     <input className = "submit_button" type="submit" value="Create board" />
                 </form>   

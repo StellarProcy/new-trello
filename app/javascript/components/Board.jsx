@@ -27,14 +27,12 @@ class Board extends Component {
     };
 
     fetchUpdate = (data) => {
-        console.log(`Update from ws: ${data}`)
     };
 
     fetchData = async () => {
         const response = await DataClient.get_board(this.state.board_id);
         let board = await response.data;
         this.setState({board})
-        console.log(board)
     };
 
     handleColumnSubmit = async (event, new_column_name) => {
@@ -43,14 +41,6 @@ class Board extends Component {
             board_id: this.state.board_id
         })
         let data = response.data
-        // unused, because websocket update
-        
-        // this.setState({
-        //     board: {
-        //         ...this.state.board,
-        //         columns: [...this.state.board.columns, data]
-        //     }
-        // })
     }
 
     handleColumnDelete = async (column_id) => {
@@ -72,23 +62,13 @@ class Board extends Component {
             column_id: column_id,
         })
         let data = response.data
-        // unused, because websocket update
-
-        // this.setState({
-        //     board: {
-        //         ...this.state.board,
-        //         cards: [...this.state.board.cards, data]
-        //     }
-        // })
     }
 
     handleChangeCardName = async (card_id, new_card_name) => {
-        console.log(`Changing title for card ${card_id} to ${new_card_name}`)
         let response = await DataClient.changeCardName(card_id, new_card_name)
         if (response.status === 204) {
             let new_cards = this.state.board.cards;
             new_cards.forEach(element => {
-                console.log(element)
                 if (element.id === card_id) {
                     element.title = new_card_name
                 }
@@ -116,17 +96,14 @@ class Board extends Component {
     }
 
     handleCardMove = async (card_id, new_column_id) => {
-        console.log(`column has changing: ${card_id} moving to ${new_column_id}`);
         let response = await DataClient.cardMove(card_id, new_column_id)
         if (response.status === 204) {
             let new_cards = this.state.board.cards;
-            console.log(new_cards)
             new_cards.forEach(element => {
                 if (element.id === card_id) {
                     element.column_id = new_column_id
                 }
             });
-            console.log(new_cards)
             this.setState({
                 board: {
                     ...this.state.board,
